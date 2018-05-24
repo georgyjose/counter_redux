@@ -8,19 +8,17 @@ import {
     Message,
     Segment
 } from 'semantic-ui-react'
-
+import { connect } from 'react-redux'
 class Counter extends React.Component {
 
     state = { count : 0 }
 
     increment = () => {
-        this.setState({ count : this.state.count+1
-        });
+        this.props.dispatch({ type : "INCREMENT" })
     }
 
     decrement = () =>{
-        this.setState({ count : this.state.count-1
-        });
+        this.props.dispatch({type: "DECREMENT"})
     }
 
     render() {
@@ -34,7 +32,7 @@ class Counter extends React.Component {
                     <Grid.Column width={3}>
                     </Grid.Column>
                     <Grid.Column width={10} verticalAlign="middle">
-                    <Header as='h1' textAlign="center" >{this.state.count}</Header>
+                    <Header as='h1' textAlign="center" >{this.props.count}</Header>
                         <Button.Group fluid>
                             <Button onClick={this.decrement}>-</Button>
                             <Button.Or />
@@ -49,4 +47,8 @@ class Counter extends React.Component {
     }
 }
 
-export default Counter
+const mapStateToProps = (state) => ({
+    count: state.count
+})
+
+export default connect(mapStateToProps)(Counter)

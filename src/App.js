@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Counter from './Counter'
 import { Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { connect } from 'react-redux'
+
 
 
 const App = () => <div class="ui container">
@@ -13,4 +16,6 @@ const App = () => <div class="ui container">
 
 </div>
 
-export default App;
+
+
+export default App
