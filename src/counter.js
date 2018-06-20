@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Button,
-    Form,
     Grid,
-    Header,
-    Image,
-    Message,
-    Segment
+    Header
 } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 class Counter extends React.Component {
