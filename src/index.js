@@ -26,8 +26,9 @@ function reducer(state = initialState,action){
             return state
     }
     return state
-    
+    return state
 }
+
 
 
 const store = createStore(reducer)
